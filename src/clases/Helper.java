@@ -5,22 +5,23 @@
  */
 package clases;
 
+import interfaz.AgregarAutosUsados;
 import java.awt.Component;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author pared
@@ -89,11 +90,63 @@ public class Helper {
         }
     }
     
+    public static void llenarTablaCarrosNuevos(JTable tabla, ArrayList <Autos> auto){
+        DefaultTableModel tm;
+        int nf;
+        tm = (DefaultTableModel)tabla.getModel();
+        limpiadoTabla(tabla);
+        nf = auto.size();
+        tm.setRowCount(nf);
+        for (int i = 0; i < nf; i++) {
+           tabla.setValueAt(auto.get(i).getMarca(), i, 0);
+           tabla.setValueAt(auto.get(i).getTipomarca(), i, 1);
+           tabla.setValueAt(auto.get(i).getModelo(), i, 2);
+           tabla.setValueAt(auto.get(i).getPrecio(), i, 3);
+        }
+    }
+    
+   
+    public static void llenarTablaAutosUsadosClientes(JTable tabla, String ruta){
+        int nf;
+        DefaultTableModel tm;
+        ArrayList<AutosUsadosClientes> carros = traerDatos(ruta);
+        tm = (DefaultTableModel)tabla.getModel();
+        nf = carros.size();
+        tm.setRowCount(nf);
+        limpiadoTabla(tabla);
+        for (int i = 0; i < nf; i++) {
+           tm.setValueAt(carros.get(i).getCedula(), i, 0);
+           tm.setValueAt(carros.get(i).getNombre(), i, 1);
+           tm.setValueAt(carros.get(i).getApellido(), i, 2);
+           tm.setValueAt(carros.get(i).getAuto().getMarca(), i, 3);
+           tm.setValueAt(carros.get(i).getAuto().getTipomarca(), i, 4);
+           tm.setValueAt(carros.get(i).getAuto().getModelo(), i, 5);
+           tm.setValueAt(carros.get(i).getTelefono(), i, 6);
+        }
+    }
+    
+    public static void llenarTablaAutosUsadosClientes(JTable tabla, ArrayList <AutosUsadosClientes> carros){
+        int nf;
+        DefaultTableModel tm;
+        tm = (DefaultTableModel)tabla.getModel();
+        nf = carros.size();
+        tm.setRowCount(nf);
+        limpiadoTabla(tabla);
+        for (int i = 0; i < nf; i++) {
+           tm.setValueAt(carros.get(i).getCedula(), i, 0);
+           tm.setValueAt(carros.get(i).getNombre(), i, 1);
+           tm.setValueAt(carros.get(i).getApellido(), i, 2);
+           tm.setValueAt(carros.get(i).getAuto().getMarca(), i, 3);
+           tm.setValueAt(carros.get(i).getAuto().getTipomarca(), i, 4);
+           tm.setValueAt(carros.get(i).getAuto().getModelo(), i, 5);
+           tm.setValueAt(carros.get(i).getTelefono(), i, 6);
+        }
+    }
     
      public static void llenarTablaAlquilar (JTable tabla, String ruta){
         DefaultTableModel tm;
         int nf;
-        ArrayList <Autos> auto = traerDatos(ruta);
+        ArrayList <AutosAlquilados> auto = traerDatos(ruta);
         tm = (DefaultTableModel)tabla.getModel();
         limpiadoTabla(tabla);
         nf = auto.size();
@@ -108,10 +161,45 @@ public class Helper {
            tabla.setValueAt(auto.get(i).getHoraspagar(), i, 6);
         }
      }
+     
+     public static void llenarTablaAlquilar (JTable tabla, ArrayList <AutosAlquilados> auto){
+        DefaultTableModel tm;
+        int nf;
+        tm = (DefaultTableModel)tabla.getModel();
+        limpiadoTabla(tabla);
+        nf = auto.size();
+        tm.setRowCount(nf);
+        for (int i = 0; i < nf; i++) {
+           tabla.setValueAt(auto.get(i).getNombre(), i, 0);
+           tabla.setValueAt(auto.get(i).getApellido(), i, 1);
+           tabla.setValueAt(auto.get(i).getCedula(), i, 2);
+           tabla.setValueAt(auto.get(i).getMarca(), i, 3);
+           tabla.setValueAt(auto.get(i).getFecha(), i, 4);
+           tabla.setValueAt(auto.get(i).getHorasalquiladas(), i, 5);
+           tabla.setValueAt(auto.get(i).getHoraspagar(), i, 6);
+        }
+     }
+     
      public static void llenarTablaAutosNuevos(JTable tabla, String ruta){
         DefaultTableModel tm;
         int nf;
         ArrayList <Autos> auto = traerDatos(ruta);
+        tm = (DefaultTableModel)tabla.getModel();
+        limpiadoTabla(tabla);
+        nf = auto.size();
+        tm.setRowCount(nf);
+        for (int i = 0; i < nf; i++) {
+           tabla.setValueAt(auto.get(i).getNombre(), i, 0);
+           tabla.setValueAt(auto.get(i).getApellido(), i, 1);
+           tabla.setValueAt(auto.get(i).getCedula(), i, 2);
+           tabla.setValueAt(auto.get(i).getMarca(), i, 3);
+           tabla.setValueAt(auto.get(i).getModelo(), i, 4);
+        }
+     }
+     
+     public static void llenarTablaAutosNuevos(JTable tabla, ArrayList <Autos> auto){
+        DefaultTableModel tm;
+        int nf;
         tm = (DefaultTableModel)tabla.getModel();
         limpiadoTabla(tabla);
         nf = auto.size();
@@ -143,16 +231,33 @@ public class Helper {
       public static void llenarTablaAutosUsados(JTable tabla, String ruta){
         DefaultTableModel tm;
         int nf;
-        ArrayList <Autos> auto = traerDatos(ruta);
+        ArrayList <AutosUsados> auto = traerDatos(ruta);
         tm = (DefaultTableModel)tabla.getModel();
         limpiadoTabla(tabla);
         nf = auto.size();
         tm.setRowCount(nf);
         for (int i = 0; i < nf; i++) {
-           tabla.setValueAt(auto.get(i).getMarca(), i, 0);
-           tabla.setValueAt(auto.get(i).getTipomarca(), i, 1);
-           tabla.setValueAt(auto.get(i).getModelo(), i, 2);
-           tabla.setValueAt(auto.get(i).getPrecio(), i, 3);
+           tabla.setValueAt(auto.get(i).getCodigo(), i, 0);
+           tabla.setValueAt(auto.get(i).getMarca(), i, 1);
+           tabla.setValueAt(auto.get(i).getTipomarca(), i, 2);
+           tabla.setValueAt(auto.get(i).getModelo(), i, 3);
+           tabla.setValueAt(auto.get(i).getNodueños(), i, 4);
+        }
+    }
+      
+       public static void llenarTablaAutosUsados(JTable tabla, ArrayList <AutosUsados> auto){
+        DefaultTableModel tm;
+        int nf;
+        tm = (DefaultTableModel)tabla.getModel();
+        limpiadoTabla(tabla);
+        nf = auto.size();
+        tm.setRowCount(nf);
+        for (int i = 0; i < nf; i++) {
+           tabla.setValueAt(auto.get(i).getCodigo(), i, 0);
+           tabla.setValueAt(auto.get(i).getMarca(), i, 1);
+           tabla.setValueAt(auto.get(i).getTipomarca(), i, 2);
+           tabla.setValueAt(auto.get(i).getModelo(), i, 3);
+           tabla.setValueAt(auto.get(i).getNodueños(), i, 4);
         }
     }
     
@@ -210,8 +315,71 @@ public class Helper {
         return false;
    }
     
+    public static boolean buscarAutoCedulaUsados(String cedula, String ruta) {
+        ArrayList<AutosUsadosClientes> auto = traerDatos(ruta);
+        for (int i = 0; i < auto.size(); i++) {
+            if (auto.get(i).getCedula().equals(cedula));{
+                return true;
+        }
+        }
+        return false;
+    }
+    
+     public static boolean buscarAutoCodigoUsados(String codigo, String ruta) {
+        ArrayList<AutosUsados> auto = traerDatos(ruta);
+        for (int i = 0; i < auto.size(); i++) {
+            if (auto.get(i).getCodigo().equals(codigo)) {
+                return true;
+            }
+        }
+        return false;
+   }
+    
+    public static boolean buscarAutoCedulaAlquilados(String cedula, String ruta) {
+        ArrayList<AutosAlquilados> auto = traerDatos(ruta);
+        for (int i = 0; i < auto.size(); i++) {
+            if (auto.get(i).getCedula().equals(cedula)) {
+                return true;
+            }
+        }
+        return false;
+   }
+    
     public static Autos traerPersonaCedula(String cedula, String ruta){
          ArrayList<Autos> auto = traerDatos(ruta);
+         for (int i = 0; i < auto.size(); i++) {
+            if (auto.get(i).getCedula().equals(cedula)) {
+                return auto.get(i);
+            }
+            
+        }
+         return null;
+    }
+    
+     public static AutosUsados traerAutoCodigo(String codigo, String ruta){
+         ArrayList<AutosUsados> auto = traerDatos(ruta);
+         for (int i = 0; i < auto.size(); i++) {
+            if (auto.get(i).getCodigo().equals(codigo)) {
+                return auto.get(i);
+            }
+            
+        }
+         return null;
+    }
+     
+     public static AutosUsadosClientes traerAutoCedula(String cedula, String ruta){
+         ArrayList<AutosUsadosClientes> auto = traerDatos(ruta);
+         for (int i = 0; i < auto.size(); i++) {
+            if (auto.get(i).getCedula().equals(cedula)) {
+                return auto.get(i);
+            }
+            
+        }
+         return null;
+    }
+    
+    public static AutosAlquilados traerPersonaCedulaAlquilados(String cedula, String ruta){
+         ArrayList<AutosAlquilados> auto = traerDatos(ruta);
          for (int i = 0; i < auto.size(); i++) {
             if (auto.get(i).getCedula().equals(cedula)) {
                 return auto.get(i);
@@ -234,16 +402,14 @@ public class Helper {
          return null;
     } 
     
-    public static ArrayList<Autos> modificarAuto(String ruta, String cedula,String nombre, String apellido, String marca, String tipomarca, String modelo, String telefono){
-         ArrayList<Autos> auto = traerDatos(ruta);
+    public static ArrayList<AutosUsados> modificarAuto(String ruta, String codigo, String marca, String tipomarca, String modelo, String nodueños){
+         ArrayList<AutosUsados> auto = traerDatos(ruta);
          for (int i = 0; i < auto.size(); i++) {
-            if(auto.get(i).getCedula().equals(cedula)){
-                auto.get(i).setNombre(nombre);
-                auto.get(i).setApellido(apellido);
+            if(auto.get(i).getCodigo().equals(codigo)){
                 auto.get(i).setMarca(marca);
                 auto.get(i).setTipomarca(tipomarca);
                 auto.get(i).setModelo(modelo);
-                auto.get(i).setTelefono(telefono);
+                auto.get(i).setNodueños(nodueños);
                 return auto;
             }
          
@@ -251,8 +417,23 @@ public class Helper {
          return null;
     } 
     
-    public static ArrayList<Autos> modificarAuto(String ruta, String cedula,String nombre, String apellido, String automovil, String fecha, int horasalquilar, int precioalquilar){
-         ArrayList<Autos> auto = traerDatos(ruta);
+     public static ArrayList<AutosUsadosClientes> modificarAuto(String ruta, String cedula, String nombre, String apellido, AutosUsados auto, String telefono){
+         ArrayList<AutosUsadosClientes> autos = traerDatos(ruta);
+         for (int i = 0; i < autos.size(); i++) {
+            if(autos.get(i).getCedula().equals(cedula)){
+                autos.get(i).setNombre(nombre);
+                autos.get(i).setApellido(apellido);
+                autos.get(i).setAuto(auto);
+                autos.get(i).setTelefono(telefono);
+                return autos;
+            }
+         
+        }
+         return null;
+    } 
+    
+    public static ArrayList<AutosAlquilados> modificarAuto(String ruta, String cedula,String nombre, String apellido, String automovil, Date fecha, int horasalquilar, int precioalquilar){
+         ArrayList<AutosAlquilados> auto = traerDatos(ruta);
          for (int i = 0; i < auto.size(); i++) {
             if(auto.get(i).getCedula().equals(cedula)){
                 auto.get(i).setNombre(nombre);
@@ -269,6 +450,17 @@ public class Helper {
         }
          return null;
     } 
-
+        public static void llenarComboPersonas(JComboBox combo, String ruta){
+        ArrayList<AutosUsados> autos = traerDatos(ruta);
+        DefaultComboBoxModel dcbm = (DefaultComboBoxModel) combo.getModel();
+        dcbm.removeAllElements();
+        AutosUsados p;
+        for (int i = 0; i < autos.size(); i++) {
+            p = autos.get(i);
+            dcbm.addElement(p.getCodigo()+" - "+p.getMarca()+" - "+p.getModelo());
+        }
+        
+        
+    }
 }
 

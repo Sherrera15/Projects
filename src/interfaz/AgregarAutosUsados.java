@@ -6,7 +6,7 @@
 package interfaz;
 
 import clases.Helper;
-import clases.Autos;
+import clases.AutosUsados;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
      */
     String ruta;
     ObjectOutputStream salida;
-    ArrayList<Autos> auto;
+    ArrayList<AutosUsados> auto;
     int aux = 0;
 
     public AgregarAutosUsados(java.awt.Frame parent, boolean modal) {
@@ -69,19 +69,15 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         cmdBuscar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtApellido = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtTipoMarca = new javax.swing.JTextField();
         txtModelo = new javax.swing.JTextField();
         cmbMarca = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        txtTelefono = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtNoDueños = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblTablaPersonas = new javax.swing.JTable();
@@ -139,48 +135,34 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         });
         jPanel4.add(cmdBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 120, 150));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 120, 150));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Persona"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Cédula:");
+        jLabel1.setText("Codigo:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 20));
-        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 120, -1));
+        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 120, -1));
 
-        jLabel2.setText("Nombre:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 20));
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 120, -1));
+        jLabel4.setText("Marca:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        jLabel3.setText("Apellido:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, 20));
-
-        txtApellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 120, -1));
-
-        jLabel4.setText("Marca");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-
-        jLabel5.setText("Tipo Marca:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jLabel5.setText("Serie:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         jLabel6.setText("Modelo:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-        jPanel2.add(txtTipoMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 120, -1));
-        jPanel2.add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 120, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel2.add(txtTipoMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 120, -1));
+        jPanel2.add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, -1));
 
         cmbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nissan", "Chevrolet", "Ford" }));
-        jPanel2.add(cmbMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, -1));
+        jPanel2.add(cmbMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 120, -1));
 
-        jLabel7.setText("Telefono:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
-        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 120, -1));
+        jLabel8.setText("No. Dueños:");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jPanel2.add(txtNoDueños, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 30, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 360, 230));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 360, 230));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Autos"));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -190,11 +172,11 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Cedula", "Nombre", "Apellido", "Marca", "Tipo Marca", "Modelo", "Telefono"
+                "Codigo", "Marca", "Serie", "Modelo", "No. Dueños"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -216,23 +198,23 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(612, 588));
+        setSize(new java.awt.Dimension(621, 578));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-        String cedula, nombre, apellido, marca, tipomarca, modelo, telefono;
-            if(txtNombre.getText().trim().isEmpty())
+        String codigo,marca, tipomarca, modelo, nodueños;
+            if(txtCodigo.getText().trim().isEmpty())
             {
-                Helper.mensaje(this, "Introduzca el nombre de la persona", 3);
-                txtNombre.requestFocusInWindow();
+                Helper.mensaje(this, "Introduzca el codigo", 3);
+                txtCodigo.requestFocusInWindow();
             }
             else if (txtModelo.getText().trim().isEmpty())
             {
@@ -245,41 +227,29 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
                 txtTipoMarca.requestFocusInWindow();
             }
             
-            else if(txtApellido.getText().trim().isEmpty())
+            else if(txtNoDueños.getText().trim().isEmpty())
             {
-                Helper.mensaje(this, "Introduzca el apellido de la persona", 3);
-                txtApellido.requestFocusInWindow();
-            }
-            else if (txtTelefono.getText().trim().isEmpty())
-            {
-                Helper.mensaje(this, "Introduzca el telefono de la persona", 3);
-                txtTelefono.requestFocusInWindow();
-            }
-            else if (txtCedula.getText().trim().isEmpty())
-            {
-                Helper.mensaje(this, "Introduzca la cedula de la persona", 3);
-                txtCedula.requestFocusInWindow();
+                Helper.mensaje(this, "Introduzca el numero de dueños del vehiculo", 3);
+                txtNoDueños.requestFocusInWindow();
             }
             else {
-        cedula = txtCedula.getText();
-        nombre = txtNombre.getText();
-        apellido = txtApellido.getText();
+        codigo = txtCodigo.getText();
         marca = cmbMarca.getSelectedItem().toString();
         tipomarca = txtTipoMarca.getText();
         modelo = txtModelo.getText();
-        telefono = txtTelefono.getText();
-        ArrayList<Autos> personasModificado;
+        nodueños = txtNoDueños.getText();
+        ArrayList<AutosUsados> autosModificado;
         try {
             if (aux == 0) {
 
-                Autos a = new Autos(nombre, apellido, cedula, modelo, marca, tipomarca, telefono);
+                AutosUsados a = new AutosUsados(codigo, marca, tipomarca, modelo, nodueños);
 
                 a.guardar(salida);
 
             } else {
-                personasModificado = Helper.modificarAuto(ruta, cedula, nombre, apellido, marca, tipomarca, modelo, telefono);
+                autosModificado= Helper.modificarAuto(ruta, codigo, marca, tipomarca, modelo, nodueños);
                 salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                Helper.volcado(salida, personasModificado);
+                Helper.volcado(salida, autosModificado);
                 aux=0;
                 Helper.mensaje(this, "Persona Actualizada Correctamente!", 1);
             }
@@ -289,13 +259,12 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         
         Helper.llenarTablaAutosUsados(tblTablaPersonas, ruta);
 
-        txtCedula.setText("");
-        txtNombre.setText("");
-        txtApellido.setText("");
+        txtCodigo.setText("");
         txtModelo.setText("");
-        txtTelefono.setText("");
+        txtNoDueños.setText("");
+        txtTipoMarca.setText("");
         cmbMarca.setSelectedIndex(0);
-        txtCedula.requestFocusInWindow();
+        txtCodigo.requestFocusInWindow();
         JButton botonesH[]={cmdBuscar,cmdCancelar};
         JButton botonesD[]={cmdEliminar,cmdGuardar};
         
@@ -305,14 +274,13 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
-        txtCedula.setText("");
-        txtNombre.setText("");
-        txtApellido.setText("");
+        txtCodigo.setText("");
         txtModelo.setText("");
-        txtTelefono.setText("");
+        txtNoDueños.setText("");
+        txtTipoMarca.setText("");
         cmbMarca.setSelectedIndex(0);
 
-        txtCedula.requestFocusInWindow();
+        txtCodigo.requestFocusInWindow();
         JButton botonesH[]={cmdBuscar,cmdCancelar};
         JButton botonesD[]={cmdEliminar,cmdGuardar};
         
@@ -322,18 +290,17 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
 
     private void tblTablaPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTablaPersonasMouseClicked
         int i;
-        Autos a;
-        ArrayList<Autos> auto = Helper.traerDatos(ruta);
+        AutosUsados a;
+        ArrayList<AutosUsados> auto = Helper.traerDatos(ruta);
         i = tblTablaPersonas.getSelectedRow();
 
         a = auto.get(i);
 
-        txtCedula.setText(a.getCedula());
-        txtNombre.setText(a.getNombre());
-        txtApellido.setText(a.getApellido());
-        txtTelefono.setText(a.getTelefono());
-        txtModelo.setText(a.getTelefono());
-
+        txtCodigo.setText(a.getCedula());
+        txtModelo.setText(a.getModelo());
+        txtNoDueños.setText(a.getNodueños());
+        txtTipoMarca.setText(a.getTipomarca());
+        
         cmbMarca.setSelectedItem(a.getMarca());
         aux=1;
         JButton botonesH[]={cmdEliminar,cmdGuardar,cmdCancelar};
@@ -347,7 +314,7 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         int i, op;
         op = JOptionPane.showConfirmDialog(this, "¿Seguro que desea eliminar a esta persona?", "Eliminar", JOptionPane.YES_NO_OPTION);
 
-        ArrayList<Autos> auto = Helper.traerDatos(ruta);
+        ArrayList<AutosUsados> auto = Helper.traerDatos(ruta);
         if (op == JOptionPane.YES_OPTION) {
             i = tblTablaPersonas.getSelectedRow();
             auto.remove(i);
@@ -360,13 +327,12 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
             }
             Helper.volcado(salida, auto);
             Helper.llenarTablaAutosUsados(tblTablaPersonas, ruta);
-            txtCedula.setText("");
-            txtNombre.setText("");
-            txtApellido.setText("");
+            txtCodigo.setText("");
             txtModelo.setText("");
-            txtTelefono.setText("");
+            txtNoDueños.setText("");
+            txtTipoMarca.setText("");
             cmbMarca.setSelectedIndex(0);
-            txtCedula.requestFocusInWindow();
+            txtCodigo.requestFocusInWindow();
         }
         JButton botonesH[]={cmdBuscar,cmdCancelar};
         JButton botonesD[]={cmdEliminar,cmdGuardar};
@@ -376,17 +342,18 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
     }//GEN-LAST:event_cmdEliminarActionPerformed
 
     private void cmdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBuscarActionPerformed
-        String cedula;
-        cedula = txtCedula.getText();
-        Autos a;
-        if (Helper.buscarAutoCedula(cedula, ruta)) {
-            a = Helper.traerPersonaCedula(cedula, ruta);
-            txtNombre.setText(a.getNombre());
-            txtApellido.setText(a.getApellido());
+        String codigo;
+        codigo = txtCodigo.getText();
+        AutosUsados a;
+        if (Helper.buscarAutoCodigoUsados(codigo, ruta)) {
+            a = Helper.traerAutoCodigo(codigo, ruta);
+            txtModelo.setText(a.getModelo());
+            txtNoDueños.setText(a.getNodueños());
+            txtTipoMarca.setText(a.getTipomarca());
             cmbMarca.setSelectedItem(a.getMarca());
             aux = 1;
         } else {
-            txtNombre.requestFocusInWindow();
+            txtTipoMarca.requestFocusInWindow();
             aux = 0;
         }
         JButton botonesH[]={cmdGuardar,cmdCancelar, cmdEliminar};
@@ -396,10 +363,6 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         Helper.deshabilitarBotones(botonesD);
 
     }//GEN-LAST:event_cmdBuscarActionPerformed
-
-    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -451,12 +414,10 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
     private javax.swing.JButton cmdEliminar;
     private javax.swing.JButton cmdGuardar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -465,11 +426,9 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable tblTablaPersonas;
-    private javax.swing.JTextField txtApellido;
-    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtModelo;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtTelefono;
+    private javax.swing.JTextField txtNoDueños;
     private javax.swing.JTextField txtTipoMarca;
     // End of variables declaration//GEN-END:variables
 }

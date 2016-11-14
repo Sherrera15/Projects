@@ -6,6 +6,7 @@
 package interfaz;
 
 import clases.Autos;
+import clases.AutosAlquilados;
 import clases.Helper;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class DatosAlquilados extends javax.swing.JDialog {
      */
         String ruta;
         ObjectOutputStream salida;
-        ArrayList<Autos> auto;
+        ArrayList<AutosAlquilados> auto;
         static JTable t;
         int aux = 0;
         DateFormat df = DateFormat.getDateInstance();
@@ -180,6 +181,7 @@ public class DatosAlquilados extends javax.swing.JDialog {
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
         String nombre, apellido, cedula, automovil;
         int horasalquilar, precioalquilar;
+        Date fecha;
         if(txtNombre.getText().trim().isEmpty())
             {
                 Helper.mensaje(this, "Introduzca el nombre de la persona", 3);
@@ -206,13 +208,13 @@ public class DatosAlquilados extends javax.swing.JDialog {
         apellido = txtApellido.getText();
         cedula = txtCedula.getText();
         automovil = txtAutomovil.getText();
-        String fecha = df.format(cmdFecha.getDate());
+        fecha = cmdFecha.getDate();
         horasalquilar = Integer.parseInt(txtHorasAlquilar.getText());
         precioalquilar = Integer.parseInt(txtPrecioAlquilar.getText());
-        ArrayList<Autos> autoModificado;
+        ArrayList<AutosAlquilados> autoModificado;
         
         if (aux == 0){
-                 Autos a = new Autos (nombre, apellido, cedula, automovil, fecha, horasalquilar, precioalquilar);
+                 AutosAlquilados a = new AutosAlquilados(nombre, apellido, cedula, automovil, fecha, horasalquilar, precioalquilar);
                  a.Operacion();
             try {
                 a.guardar(salida);
@@ -253,13 +255,13 @@ public class DatosAlquilados extends javax.swing.JDialog {
     private void cmdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBuscarActionPerformed
         String cedula;
         cedula = txtCedula.getText();
-        Autos a;
+        AutosAlquilados a;
         
-        if (Helper.buscarAutoCedula(cedula, ruta)) {
-            a = Helper.traerPersonaCedula(cedula, ruta);
+        if (Helper.buscarAutoCedulaAlquilados(cedula, ruta)){;
+            a = Helper.traerPersonaCedulaAlquilados(cedula, ruta);
             txtNombre.setText(a.getNombre());
             txtApellido.setText(a.getApellido());
-            cmdFecha.setDateFormatString(a.getFecha());
+            cmdFecha.setDate(a.getFecha());
             txtHorasAlquilar.setText("" + a.getHorasalquiladas());
             txtPrecioAlquilar.setText("" + a.getPrecioalquilada());
             txtAutomovil.setText(a.getMarca());
@@ -281,7 +283,7 @@ public class DatosAlquilados extends javax.swing.JDialog {
         txtNombre.setText("");
         txtApellido.setText("");
         txtAutomovil.setText("");
-        cmdFecha.setDateFormatString("");
+        cmdFecha.setDate(null);
         txtHorasAlquilar.setText("");
         txtPrecioAlquilar.setText("");
         txtHorasAlquilar.setText("");

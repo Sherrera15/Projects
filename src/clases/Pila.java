@@ -9,6 +9,6 @@ package clases;
  *
  * @author pared
  */
-public class NewClass {
+public class Pila {
     
 }

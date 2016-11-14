@@ -20,24 +20,16 @@ public class Autos implements java.io.Serializable{
       private String Modelo;
       private String Marca;
       private String precio;
-      private int precioalquilada;
       private String tipomodelo;
       private String tipomarca;
-      private String fecha;
+      private Date fecha;
       private String telefono;
-      private int horasalquiladas;
-      private int horaspagar;
 
-    
-    public Autos(String nombre, String apellido, String Cedula, String Modelo, String Marca, String tipomarca, String telefono) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.Cedula = Cedula;
-        this.Modelo = Modelo;
-        this.Marca = Marca;
-        this.tipomarca = tipomodelo;
-        this.telefono = telefono;
-       
+
+    public Autos(String nombre, String apellido, String cedula) {
+       this.nombre = nombre;
+       this.apellido = apellido;
+       this.Cedula = cedula;
     }
     
  public Autos(String Modelo, String Marca, String tipomarca, String precio) {
@@ -55,14 +47,12 @@ public class Autos implements java.io.Serializable{
         this.Modelo = modelo;
   }
   
-  public Autos(String nombre, String apellido, String Cedula, String marca, String fecha, int horasalquiladas, int precioalquilada) {
+  public Autos(String nombre, String apellido, String Cedula, String marca, Date fecha) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.Cedula = Cedula;
         this.Marca = marca;
         this.fecha = fecha;
-        this.horasalquiladas = horasalquiladas;
-        this.precioalquilada = precioalquilada;
   }
 
     public String getTelefono() {
@@ -73,37 +63,12 @@ public class Autos implements java.io.Serializable{
         this.telefono = telefono;
     }
 
-
-    public int getPrecioalquilada() {
-        return precioalquilada;
-    }
-
-    public void setPrecioalquilada(int precioalquilada) {
-        this.precioalquilada = precioalquilada;
-    }
-
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public int getHorasalquiladas() {
-        return horasalquiladas;
-    }
-
-    public void setHorasalquiladas(int horasalquiladas) {
-        this.horasalquiladas = horasalquiladas;
-    }
-
-    public int getHoraspagar() {
-        return horaspagar;
-    }
-
-    public void setHoraspagar(int horaspagar) {
-        this.horaspagar = horaspagar;
     }
   
     public String getNombre() {
@@ -168,13 +133,6 @@ public class Autos implements java.io.Serializable{
 
     public void setPrecio(String precio) {
         this.precio = precio;
-    }
-     
-    public void Operacion ()
-    {
-        int aux;
-        aux = this.precioalquilada*this.horasalquiladas;
-        this.setHoraspagar(aux);
     }
     
        public void guardar(ObjectOutputStream salida) throws IOException{
