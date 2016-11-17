@@ -183,7 +183,7 @@ public class Livina extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSalirActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_cmbSalirActionPerformed
 
     private void cmbSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbSalirMouseExited
