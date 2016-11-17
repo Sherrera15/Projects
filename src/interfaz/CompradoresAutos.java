@@ -66,6 +66,13 @@ public class CompradoresAutos extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         txtModelo = new javax.swing.JTextField();
         txtMarca = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         cmdBuscar = new javax.swing.JButton();
         cmbGuardar = new javax.swing.JButton();
@@ -85,12 +92,18 @@ public class CompradoresAutos extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Personales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("Nombre:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 153, 0));
         jLabel4.setText("Apellido:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 0));
         jLabel5.setText("Cedula:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
@@ -115,9 +128,13 @@ public class CompradoresAutos extends javax.swing.JDialog {
         });
         jPanel1.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 100, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 153, 0));
         jLabel8.setText("Marca:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 153, 0));
         jLabel9.setText("Modelo:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
@@ -127,43 +144,71 @@ public class CompradoresAutos extends javax.swing.JDialog {
         txtMarca.setEditable(false);
         jPanel1.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 100, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 290, 230));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel11.setText("Datos Personales");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel12.setText("*");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 20, -1));
+
+        jLabel13.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel13.setText("*");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 20, -1));
+
+        jLabel14.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel14.setText("*");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 20, -1));
+
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setText("*");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 20, -1));
+
+        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel16.setText("*");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 20, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/artsfon.com-72281.jpg"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 230));
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 290, 230));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 204, 0));
         jLabel1.setText("COMPRADORES");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 190, 40));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 190, 40));
 
-        cmdBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmdBuscar.setText("Buscar");
         cmdBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdBuscarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 110, 40));
+        jPanel3.add(cmdBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 110, 30));
 
-        cmbGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbGuardar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbGuardar.setText("Guardar");
         cmbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGuardarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 110, 40));
+        jPanel3.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 110, 30));
 
-        cmdLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdLimpiar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmdLimpiar.setText("Limpiar");
         cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdLimpiarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 110, 40));
+        jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 110, 30));
 
-        cmdSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdSalir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmdSalir.setText("Salir");
-        jPanel3.add(cmdSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 110, 40));
+        jPanel3.add(cmdSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 110, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/183903088.gif"))); // NOI18N
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 490, 330));
@@ -337,6 +382,13 @@ public class CompradoresAutos extends javax.swing.JDialog {
     private javax.swing.JButton cmdLimpiar;
     private javax.swing.JButton cmdSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

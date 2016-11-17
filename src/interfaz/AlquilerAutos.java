@@ -38,7 +38,6 @@ public class AlquilerAutos extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         cmbAlquilar1 = new javax.swing.JButton();
         cmbAlquilar2 = new javax.swing.JButton();
         cmbAlquilar3 = new javax.swing.JButton();
@@ -56,12 +55,22 @@ public class AlquilerAutos extends javax.swing.JDialog {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 100, 60));
 
         cmbAlquilar1.setText("Alquilar");
         cmbAlquilar1.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +78,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 cmbAlquilar1ActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbAlquilar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
+        jPanel1.add(cmbAlquilar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
 
         cmbAlquilar2.setText("Alquilar");
         cmbAlquilar2.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +86,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 cmbAlquilar2ActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbAlquilar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, -1, -1));
+        jPanel1.add(cmbAlquilar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, -1, -1));
 
         cmbAlquilar3.setText("Alquilar");
         cmbAlquilar3.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +94,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 cmbAlquilar3ActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbAlquilar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, -1, -1));
+        jPanel1.add(cmbAlquilar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 120, -1, -1));
 
         cmbAlquilar4.setText("Alquilar");
         cmbAlquilar4.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +102,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 cmbAlquilar4ActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbAlquilar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, -1, -1));
+        jPanel1.add(cmbAlquilar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
 
         cmbAlquilar5.setText("Alquilar");
         cmbAlquilar5.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +110,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 cmbAlquilar5ActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbAlquilar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 400, -1, -1));
+        jPanel1.add(cmbAlquilar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, -1, -1));
 
         tblTablaAlquilar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -121,8 +130,14 @@ public class AlquilerAutos extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblTablaAlquilar);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 710, 170));
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 200, 160));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 710, 170));
+
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel7MouseEntered(evt);
+            }
+        });
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 260, 200));
 
         jButton1.setText("Ver imagen ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -130,11 +145,35 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, 160));
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 200, 160));
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 200, 160));
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 160));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel8MouseEntered(evt);
+            }
+        });
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 270, 210));
+
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel9MouseEntered(evt);
+            }
+        });
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 260, 210));
+
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel10MouseEntered(evt);
+            }
+        });
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 250, 220));
+
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel11MouseEntered(evt);
+            }
+        });
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 260, 210));
 
         jButton2.setText("Ver imagen ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +181,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, -1, -1));
 
         jButton3.setText("Ver imagen ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +189,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, -1, -1));
 
         jButton4.setText("Ver imagen ");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +197,7 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, -1, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
 
         jButton5.setText("Ver imagen ");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -166,9 +205,39 @@ public class AlquilerAutos extends javax.swing.JDialog {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 620));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga (2).jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga (3).jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 290, 190));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga (4).jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 280, 190));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga (7).jpg"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 300, 180));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6355918990223938941737718871_giphy.gif"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 500, 320));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/183903088.gif"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 500, 340));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga (2).jpg"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 290, 130, 200));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/noche.gif"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 500, 250));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tumblr_m9ychoruds1r3055wo1_500.gif"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, -1, 250));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga (4).jpg"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 490, 150, 260));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 750));
 
         pack();
         setLocationRelativeTo(null);
@@ -251,6 +320,31 @@ public class AlquilerAutos extends javax.swing.JDialog {
         jLabel7.setIcon(icono);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+        Volkswagen v = new Volkswagen(null, true);
+         v.setVisible(true);
+    }//GEN-LAST:event_jLabel8MouseEntered
+
+    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
+       Renault r = new Renault(null, true);
+         r.setVisible(true);
+    }//GEN-LAST:event_jLabel9MouseEntered
+
+    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
+        Auto3 a = new Auto3(null, true);
+         a.setVisible(true);
+    }//GEN-LAST:event_jLabel10MouseEntered
+
+    private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
+       Siena s = new Siena(null, true);
+         s.setVisible(true);
+    }//GEN-LAST:event_jLabel11MouseEntered
+
+    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
+        Livina l = new Livina(null, true);
+         l.setVisible(true);
+    }//GEN-LAST:event_jLabel7MouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -304,9 +398,18 @@ public class AlquilerAutos extends javax.swing.JDialog {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

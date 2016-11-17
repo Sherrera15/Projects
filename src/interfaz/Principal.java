@@ -36,17 +36,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        mnAutosNuevos = new javax.swing.JMenuItem();
-        mnAutosUsados = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         mnSalir = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
         mnAgregarNuevos = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        mnAutosNuevos = new javax.swing.JMenuItem();
+        mnAutosUsados = new javax.swing.JMenuItem();
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -70,35 +70,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 220, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/seguro-contra-terceros-la-caja.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 720, 470));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 720, 450));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 720, 410));
 
         jMenu1.setText("Opciones");
-
-        mnAutosNuevos.setText("Autos Nuevos");
-        mnAutosNuevos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnAutosNuevosActionPerformed(evt);
-            }
-        });
-        jMenu1.add(mnAutosNuevos);
-
-        mnAutosUsados.setText("Autos Usados");
-        mnAutosUsados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnAutosUsadosActionPerformed(evt);
-            }
-        });
-        jMenu1.add(mnAutosUsados);
-
-        jMenuItem2.setText("Alquilar Autos");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
         jMenu1.add(jSeparator2);
 
         mnSalir.setText("Salir");
@@ -130,6 +106,14 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem3);
 
+        jMenuItem2.setText("Alquilar Autos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Reportes");
@@ -146,6 +130,22 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem1);
+
+        mnAutosNuevos.setText("Autos Nuevos");
+        mnAutosNuevos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAutosNuevosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mnAutosNuevos);
+
+        mnAutosUsados.setText("Autos Usados");
+        mnAutosUsados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAutosUsadosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mnAutosUsados);
 
         jMenuBar1.add(jMenu3);
 

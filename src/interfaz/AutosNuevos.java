@@ -51,6 +51,8 @@ public class AutosNuevos extends javax.swing.JDialog {
         cmbComprar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,42 +83,48 @@ public class AutosNuevos extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblAutosNuevos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 330, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 340, 220));
 
-        cmbMarca.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbMarca.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbMarca.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chevrolet", "Ford", "Renault", "Nissan", "Mazda", "Audi", "Ferrari", "Lamborghini", " " }));
         cmbMarca.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbMarcaItemStateChanged(evt);
             }
         });
-        jPanel1.add(cmbMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 100, 40));
+        jPanel1.add(cmbMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 100, 30));
 
-        cmbListar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbListar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbListar.setText("Listar");
         cmbListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbListarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 100, 40));
+        jPanel1.add(cmbListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 100, 30));
 
-        cmbComprar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbComprar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbComprar.setText("Comprar");
         cmbComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbComprarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 100, 40));
+        jPanel1.add(cmbComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 100, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 204, 0));
         jLabel1.setText("AUTOMOVILES NUEVOS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 290, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 290, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/noche.gif"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 530, 300));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 500, 280));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6355918990223938941737718871_giphy.gif"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 500, 320));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6355918990223938941737718871_giphy.gif"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 510, 310));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 560, 370));
 
@@ -204,6 +212,8 @@ public class AutosNuevos extends javax.swing.JDialog {
     private javax.swing.JComboBox cmbMarca;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblAutosNuevos;

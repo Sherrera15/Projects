@@ -82,11 +82,22 @@ public class DatosAlquilados extends javax.swing.JDialog {
         cmdFecha = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
         txtSerie = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         cmdBuscar = new javax.swing.JButton();
         cmdGuardar = new javax.swing.JButton();
         cmdCancelar = new javax.swing.JButton();
         cmdSalir = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -98,21 +109,33 @@ public class DatosAlquilados extends javax.swing.JDialog {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Personales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 0));
         jLabel1.setText("Nombre:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 204, 0));
         jLabel2.setText("Apellido:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 204, 0));
         jLabel3.setText("Cedula:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, 20));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 204, 0));
         jLabel4.setText("Automovil:");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 204, 0));
         jLabel5.setText("Fecha:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 204, 0));
         jLabel6.setText("Horas a Alquilar:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
@@ -147,6 +170,8 @@ public class DatosAlquilados extends javax.swing.JDialog {
         });
         jPanel2.add(txtHorasAlquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 90, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 204, 0));
         jLabel7.setText("Precio Alquilar:");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
@@ -159,52 +184,97 @@ public class DatosAlquilados extends javax.swing.JDialog {
         jPanel2.add(txtPrecioAlquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 90, -1));
         jPanel2.add(cmdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 90, -1));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 204, 0));
         jLabel10.setText("Serie:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         txtSerie.setEditable(false);
         jPanel2.add(txtSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, -1));
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel12.setText("Datos Personales");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel13.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel13.setText("*");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 20, -1));
+
+        jLabel14.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel14.setText("*");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 20, -1));
+
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setText("*");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 20, -1));
+
+        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel16.setText("*");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 20, -1));
+
+        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel17.setText("*");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 20, -1));
+
+        jLabel18.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel18.setText("*");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 20, -1));
+
+        jLabel19.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel19.setText("*");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 20, -1));
+
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel20.setText("*");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 20, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/artsfon.com-72281.jpg"))); // NOI18N
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 270));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 350, 270));
 
-        cmdBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmdBuscar.setText("Buscar");
         cmdBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdBuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 130, 40));
+        jPanel1.add(cmdBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 110, 30));
 
-        cmdGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdGuardar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmdGuardar.setText("Guardar");
         cmdGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 130, 40));
+        jPanel1.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 110, 30));
 
-        cmdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdCancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmdCancelar.setText("Cancelar");
         cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 130, 40));
+        jPanel1.add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 110, 30));
 
-        cmdSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdSalir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmdSalir.setText("Salir");
         cmdSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 130, 40));
+        jPanel1.add(cmdSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 110, 30));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6355918990223938941737718871_giphy.gif"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 500, 310));
+
+        jLabel21.setText("jLabel21");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 110, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/183903088.gif"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -438,7 +508,18 @@ public class DatosAlquilados extends javax.swing.JDialog {
     private javax.swing.JButton cmdSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

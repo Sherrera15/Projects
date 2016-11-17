@@ -126,35 +126,35 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
         });
         jPanel4.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 110, 30));
 
-        cmbGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbGuardar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbGuardar.setText("Guardar");
         cmbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGuardarActionPerformed(evt);
             }
         });
-        jPanel4.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 130, 50));
+        jPanel4.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 90, 30));
 
-        cmbGuardar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbGuardar2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbGuardar2.setText("Guardar [PILA]");
         cmbGuardar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbGuardar2ActionPerformed(evt);
             }
         });
-        jPanel4.add(cmbGuardar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 150, 50));
+        jPanel4.add(cmbGuardar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 150, 30));
 
-        cmbLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbLimpiar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbLimpiar.setText("Limpiar");
         cmbLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbLimpiarActionPerformed(evt);
             }
         });
-        jPanel4.add(cmbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 130, 50));
+        jPanel4.add(cmbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 120, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel5.setForeground(new java.awt.Color(255, 204, 0));
         jLabel5.setText("DATOS DEL AUTOMOVIL NUEVO");
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
