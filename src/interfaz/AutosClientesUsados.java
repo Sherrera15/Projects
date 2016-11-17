@@ -198,7 +198,27 @@ public class AutosClientesUsados extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAgregarActionPerformed
-
+            if (txtCedula.getText().trim().isEmpty())
+            {
+                Helper.mensaje(this, "Ingrese la cedula de la persona", 3);
+                txtCedula.requestFocusInWindow();
+            } 
+            else if (txtNombre.getText().trim().isEmpty())
+            {
+                Helper.mensaje(this, "Ingrese el nombre de la persona", 3);
+                txtNombre.requestFocusInWindow();
+            } 
+            else if (txtApellido.getText().trim().isEmpty())
+            {
+                Helper.mensaje(this, "Ingrese el apellido de la persona", 3);
+                txtApellido.requestFocusInWindow();
+            } 
+            else if (txtTelefono.getText().trim().isEmpty())
+            {
+                Helper.mensaje(this, "Ingrese el telefono de la persona", 3);
+                txtCedula.requestFocusInWindow();
+            } 
+            else {
         try {
             String cedula, nombre, apellido, telefono, auxAuto, codigo;
             AutosUsados auto;    
@@ -238,6 +258,7 @@ public class AutosClientesUsados extends javax.swing.JDialog {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+            }
         JButton botonesH[] = {cmdBuscar, cmdCancelar};
         JButton botonesD[] = {cmdAgregar, cmdEliminar};
         Helper.habilitarBotones(botonesH);
@@ -273,27 +294,28 @@ public class AutosClientesUsados extends javax.swing.JDialog {
     private void cmdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBuscarActionPerformed
         String cedula, auxPropietario;
         cedula = txtCedula.getText();
-        AutosUsados p;
-
+        AutosUsados auto;
+        AutosUsadosClientes c;
+                
         if (Helper.buscarAutoCedulaUsados(cedula, rutaC)) {
-            AutosUsadosClientes c = Helper.traerAutoCedula(cedula, rutaC);
+             c = Helper.traerAutoUsadosCedula(cedula, rutaC);
             txtCedula.setText(c.getCedula());
             txtNombre.setText(c.getNombre());
             txtApellido.setText(c.getApellido());
             txtTelefono.setText(c.getTelefono());
-            p = c.getAuto();
-            auxPropietario = p.getCodigo()+ " - " + p.getMarca() + " " + p.getModelo();
+            auto = c.getAuto();
+            auxPropietario = auto.getCodigo()+ " - " + auto.getMarca() + " " + auto.getModelo();
             cmbAuto.setSelectedItem(auxPropietario);
             aux = 1;
 
         } else {
-            txtCedula.requestFocusInWindow();
+            txtNombre.requestFocusInWindow();
             aux = 0;
 
         }
 
         JButton botonesH[] = {cmdAgregar, cmdCancelar};
-        JButton botonesD[] = {cmdBuscar, cmdEliminar};
+        JButton botonesD[] = {cmdBuscar};
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
     }//GEN-LAST:event_cmdBuscarActionPerformed

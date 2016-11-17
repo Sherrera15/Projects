@@ -14,6 +14,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -318,7 +319,7 @@ public class Helper {
     public static boolean buscarAutoCedulaUsados(String cedula, String ruta) {
         ArrayList<AutosUsadosClientes> auto = traerDatos(ruta);
         for (int i = 0; i < auto.size(); i++) {
-            if (auto.get(i).getCedula().equals(cedula));{
+            if (auto.get(i).getCedula().equals(cedula)){
                 return true;
         }
         }
@@ -367,7 +368,7 @@ public class Helper {
          return null;
     }
      
-     public static AutosUsadosClientes traerAutoCedula(String cedula, String ruta){
+     public static AutosUsadosClientes traerAutoUsadosCedula(String cedula, String ruta){
          ArrayList<AutosUsadosClientes> auto = traerDatos(ruta);
          for (int i = 0; i < auto.size(); i++) {
             if (auto.get(i).getCedula().equals(cedula)) {
@@ -402,7 +403,7 @@ public class Helper {
          return null;
     } 
     
-    public static ArrayList<AutosUsados> modificarAuto(String ruta, String codigo, String marca, String tipomarca, String modelo, String nodueños){
+    public static ArrayList<AutosUsados> modificarAuto(String ruta, String codigo, String marca, String tipomarca, String modelo, int nodueños){
          ArrayList<AutosUsados> auto = traerDatos(ruta);
          for (int i = 0; i < auto.size(); i++) {
             if(auto.get(i).getCodigo().equals(codigo)){
@@ -432,13 +433,14 @@ public class Helper {
          return null;
     } 
     
-    public static ArrayList<AutosAlquilados> modificarAuto(String ruta, String cedula,String nombre, String apellido, String automovil, Date fecha, int horasalquilar, int precioalquilar){
+    public static ArrayList<AutosAlquilados> modificarAuto(String ruta, String cedula,String nombre, String apellido, String marca, String tipomarca, String fecha, int horasalquilar, int precioalquilar){
          ArrayList<AutosAlquilados> auto = traerDatos(ruta);
          for (int i = 0; i < auto.size(); i++) {
             if(auto.get(i).getCedula().equals(cedula)){
                 auto.get(i).setNombre(nombre);
                 auto.get(i).setApellido(apellido);
-                auto.get(i).setMarca(automovil);
+                auto.get(i).setMarca(marca);
+                auto.get(i).setTipomarca(tipomarca);
                 auto.get(i).setFecha(fecha);
                 auto.get(i).setHorasalquiladas(horasalquilar);
                 auto.get(i).setPrecioalquilada(precioalquilar);
@@ -459,8 +461,7 @@ public class Helper {
             p = autos.get(i);
             dcbm.addElement(p.getCodigo()+" - "+p.getMarca()+" - "+p.getModelo());
         }
-        
-        
     }
+    
 }
 

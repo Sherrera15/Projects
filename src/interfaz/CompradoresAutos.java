@@ -93,8 +93,26 @@ public class CompradoresAutos extends javax.swing.JDialog {
 
         jLabel5.setText("Cedula:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 100, -1));
+
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 100, -1));
+
+        txtCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 100, -1));
 
         jLabel8.setText("Marca:");
@@ -109,12 +127,12 @@ public class CompradoresAutos extends javax.swing.JDialog {
         txtMarca.setEditable(false);
         jPanel1.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 100, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 280, 190));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 290, 230));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 51));
         jLabel1.setText("COMPRADORES");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 190, 40));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 190, 40));
 
         cmdBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmdBuscar.setText("Buscar");
@@ -123,7 +141,7 @@ public class CompradoresAutos extends javax.swing.JDialog {
                 cmdBuscarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 110, 40));
+        jPanel3.add(cmdBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 110, 40));
 
         cmbGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmbGuardar.setText("Guardar");
@@ -132,7 +150,7 @@ public class CompradoresAutos extends javax.swing.JDialog {
                 cmbGuardarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 110, 40));
+        jPanel3.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 110, 40));
 
         cmdLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmdLimpiar.setText("Limpiar");
@@ -141,11 +159,11 @@ public class CompradoresAutos extends javax.swing.JDialog {
                 cmdLimpiarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 110, 40));
+        jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 110, 40));
 
         cmdSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmdSalir.setText("Salir");
-        jPanel3.add(cmdSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 110, 40));
+        jPanel3.add(cmdSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 110, 40));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/183903088.gif"))); // NOI18N
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 490, 330));
@@ -243,6 +261,33 @@ public class CompradoresAutos extends javax.swing.JDialog {
         
         txtCedula.requestFocusInWindow();
     }//GEN-LAST:event_cmdLimpiarActionPerformed
+
+    private void txtCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCedulaKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtApellidoKeyTyped
 
     /**
      * @param args the command line arguments

@@ -15,24 +15,14 @@ import java.io.ObjectOutputStream;
 public class AutosUsados extends Autos
 {
    private String codigo;
-   private String nodueños;
    private String telefono;
    private Autos auto;
    
-   public AutosUsados (String codigo, String marca, String tipomarca, String modelo, String nodueños)
+   public AutosUsados (String codigo, String marca, String tipomarca, String modelo, int nodueños)
    {
-      super(modelo, marca, tipomarca);
+      super(modelo, marca, nodueños, tipomarca);
       this.codigo = codigo;
-      this.nodueños = nodueños;
    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
 
     public Autos getAuto() {
         return auto;
@@ -49,15 +39,7 @@ public class AutosUsados extends Autos
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-
-    public String getNodueños() {
-        return nodueños;
-    }
-
-    public void setNodueños(String nodueños) {
-        this.nodueños = nodueños;
-    }
-   
+    
    public void guardar(ObjectOutputStream salida) throws IOException{
         salida.writeObject(this);
     }

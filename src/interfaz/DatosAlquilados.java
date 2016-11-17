@@ -34,6 +34,7 @@ public class DatosAlquilados extends javax.swing.JDialog {
         ArrayList<AutosAlquilados> auto;
         static JTable t;
         int aux = 0;
+        
         DateFormat df = DateFormat.getDateInstance();
     public DatosAlquilados(java.awt.Frame parent, boolean modal, JTable tabla) {
         super(parent, modal);
@@ -79,6 +80,8 @@ public class DatosAlquilados extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         txtPrecioAlquilar = new javax.swing.JTextField();
         cmdFecha = new com.toedter.calendar.JDateChooser();
+        jLabel10 = new javax.swing.JLabel();
+        txtSerie = new javax.swing.JTextField();
         cmdBuscar = new javax.swing.JButton();
         cmdGuardar = new javax.swing.JButton();
         cmdCancelar = new javax.swing.JButton();
@@ -108,26 +111,61 @@ public class DatosAlquilados extends javax.swing.JDialog {
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         jLabel5.setText("Fecha:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         jLabel6.setText("Horas a Alquilar:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 90, -1));
+
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 90, -1));
-        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 90, -1));
+
+        txtCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 90, 20));
 
         txtAutomovil.setEditable(false);
         jPanel2.add(txtAutomovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 90, -1));
-        jPanel2.add(txtHorasAlquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 90, -1));
+
+        txtHorasAlquilar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHorasAlquilarKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtHorasAlquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 90, -1));
 
         jLabel7.setText("Precio Alquilar:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         txtPrecioAlquilar.setEditable(false);
-        jPanel2.add(txtPrecioAlquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 90, -1));
-        jPanel2.add(cmdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, -1));
+        txtPrecioAlquilar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrecioAlquilarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtPrecioAlquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 90, -1));
+        jPanel2.add(cmdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 90, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 350, 240));
+        jLabel10.setText("Serie:");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+
+        txtSerie.setEditable(false);
+        jPanel2.add(txtSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 350, 270));
 
         cmdBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmdBuscar.setText("Buscar");
@@ -179,9 +217,9 @@ public class DatosAlquilados extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-        String nombre, apellido, cedula, automovil;
+        String nombre, apellido, cedula, automovil, serie;
         int horasalquilar, precioalquilar;
-        Date fecha;
+        String fecha;
         if(txtNombre.getText().trim().isEmpty())
             {
                 Helper.mensaje(this, "Introduzca el nombre de la persona", 3);
@@ -203,18 +241,24 @@ public class DatosAlquilados extends javax.swing.JDialog {
                 Helper.mensaje(this, "Introduzca la cedula de la persona", 3);
                 txtCedula.requestFocusInWindow();
             }
+            else if (cmdFecha.getDateFormatString()==null)
+            {
+                Helper.mensaje(this, "Introduzca la fecha", 3);
+                cmdFecha.requestFocusInWindow();
+            }
             else {
         nombre = txtNombre.getText();
         apellido = txtApellido.getText();
         cedula = txtCedula.getText();
         automovil = txtAutomovil.getText();
-        fecha = cmdFecha.getDate();
+        serie = txtSerie.getText();
+        fecha = df.format(cmdFecha.getDate());
         horasalquilar = Integer.parseInt(txtHorasAlquilar.getText());
         precioalquilar = Integer.parseInt(txtPrecioAlquilar.getText());
         ArrayList<AutosAlquilados> autoModificado;
         
         if (aux == 0){
-                 AutosAlquilados a = new AutosAlquilados(nombre, apellido, cedula, automovil, fecha, horasalquilar, precioalquilar);
+                 AutosAlquilados a = new AutosAlquilados(nombre, apellido, cedula, automovil, serie, fecha, horasalquilar, precioalquilar);
                  a.Operacion();
             try {
                 a.guardar(salida);
@@ -223,7 +267,7 @@ public class DatosAlquilados extends javax.swing.JDialog {
             }
             }
             else {
-                autoModificado = Helper.modificarAuto(ruta, cedula, nombre, apellido, automovil, fecha, horasalquilar, precioalquilar);
+                autoModificado = Helper.modificarAuto(ruta, cedula, nombre, apellido, automovil,serie, fecha, horasalquilar, precioalquilar);
             try {
                 salida = new ObjectOutputStream(new FileOutputStream(ruta));
             } catch (IOException ex) {
@@ -239,8 +283,9 @@ public class DatosAlquilados extends javax.swing.JDialog {
          txtNombre.setText("");
          txtApellido.setText("");
          txtCedula.setText("");
+         txtSerie.setText("");
          txtAutomovil.setText("");
-         cmdFecha.setDateFormatString("");
+         cmdFecha.setDate(null);
          txtHorasAlquilar.setText("");
          txtPrecioAlquilar.setText("");
          
@@ -261,7 +306,8 @@ public class DatosAlquilados extends javax.swing.JDialog {
             a = Helper.traerPersonaCedulaAlquilados(cedula, ruta);
             txtNombre.setText(a.getNombre());
             txtApellido.setText(a.getApellido());
-            cmdFecha.setDate(a.getFecha());
+            cmdFecha.setDateFormatString(a.getFecha());
+            txtSerie.setText(a.getTipomarca());
             txtHorasAlquilar.setText("" + a.getHorasalquiladas());
             txtPrecioAlquilar.setText("" + a.getPrecioalquilada());
             txtAutomovil.setText(a.getMarca());
@@ -283,6 +329,7 @@ public class DatosAlquilados extends javax.swing.JDialog {
         txtNombre.setText("");
         txtApellido.setText("");
         txtAutomovil.setText("");
+        txtSerie.setText("");
         cmdFecha.setDate(null);
         txtHorasAlquilar.setText("");
         txtPrecioAlquilar.setText("");
@@ -300,6 +347,45 @@ public class DatosAlquilados extends javax.swing.JDialog {
     private void cmdSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_cmdSalirActionPerformed
+
+    private void txtPrecioAlquilarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioAlquilarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioAlquilarActionPerformed
+
+    private void txtCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyTyped
+        char c=evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCedulaKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtHorasAlquilarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHorasAlquilarKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtHorasAlquilarKeyTyped
 
     /**
      * @param args the command line arguments
@@ -351,6 +437,7 @@ public class DatosAlquilados extends javax.swing.JDialog {
     private javax.swing.JButton cmdGuardar;
     private javax.swing.JButton cmdSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -367,5 +454,6 @@ public class DatosAlquilados extends javax.swing.JDialog {
     private javax.swing.JTextField txtHorasAlquilar;
     private javax.swing.JTextField txtNombre;
     public static javax.swing.JTextField txtPrecioAlquilar;
+    public static javax.swing.JTextField txtSerie;
     // End of variables declaration//GEN-END:variables
 }

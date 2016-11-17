@@ -61,6 +61,7 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        NoLlantas = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         cmdGuardar = new javax.swing.JButton();
@@ -78,6 +79,11 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         cmbMarca = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         txtNoDueños = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        radio1 = new javax.swing.JRadioButton();
+        radio2 = new javax.swing.JRadioButton();
+        radio3 = new javax.swing.JRadioButton();
+        radio4 = new javax.swing.JRadioButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblTablaPersonas = new javax.swing.JTable();
@@ -162,7 +168,31 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
         jPanel2.add(txtNoDueños, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 30, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 360, 230));
+        jLabel2.setText("No Llantas:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+
+        NoLlantas.add(radio1);
+        radio1.setText("1");
+        radio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(radio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, 20));
+
+        NoLlantas.add(radio2);
+        radio2.setText("2");
+        jPanel2.add(radio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
+
+        NoLlantas.add(radio3);
+        radio3.setText("3");
+        jPanel2.add(radio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
+
+        NoLlantas.add(radio4);
+        radio4.setText("4");
+        jPanel2.add(radio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 370, 240));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Autos"));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -210,7 +240,8 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-        String codigo,marca, tipomarca, modelo, nodueños;
+        String codigo,marca, tipomarca, modelo;
+        int nodueños;
             if(txtCodigo.getText().trim().isEmpty())
             {
                 Helper.mensaje(this, "Introduzca el codigo", 3);
@@ -237,7 +268,7 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         marca = cmbMarca.getSelectedItem().toString();
         tipomarca = txtTipoMarca.getText();
         modelo = txtModelo.getText();
-        nodueños = txtNoDueños.getText();
+        nodueños = Integer.parseInt(txtNoDueños.getText());
         ArrayList<AutosUsados> autosModificado;
         try {
             if (aux == 0) {
@@ -298,7 +329,7 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
 
         txtCodigo.setText(a.getCedula());
         txtModelo.setText(a.getModelo());
-        txtNoDueños.setText(a.getNodueños());
+        txtNoDueños.setText(""+ a.getNodueños());
         txtTipoMarca.setText(a.getTipomarca());
         
         cmbMarca.setSelectedItem(a.getMarca());
@@ -348,7 +379,7 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         if (Helper.buscarAutoCodigoUsados(codigo, ruta)) {
             a = Helper.traerAutoCodigo(codigo, ruta);
             txtModelo.setText(a.getModelo());
-            txtNoDueños.setText(a.getNodueños());
+            txtNoDueños.setText("" + a.getNodueños());
             txtTipoMarca.setText(a.getTipomarca());
             cmbMarca.setSelectedItem(a.getMarca());
             aux = 1;
@@ -363,6 +394,10 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
         Helper.deshabilitarBotones(botonesD);
 
     }//GEN-LAST:event_cmdBuscarActionPerformed
+
+    private void radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radio1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -408,12 +443,14 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup NoLlantas;
     private javax.swing.JComboBox<String> cmbMarca;
     private javax.swing.JButton cmdBuscar;
     private javax.swing.JButton cmdCancelar;
     private javax.swing.JButton cmdEliminar;
     private javax.swing.JButton cmdGuardar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -425,6 +462,10 @@ public class AgregarAutosUsados extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JRadioButton radio1;
+    private javax.swing.JRadioButton radio2;
+    private javax.swing.JRadioButton radio3;
+    private javax.swing.JRadioButton radio4;
     private javax.swing.JTable tblTablaPersonas;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtModelo;

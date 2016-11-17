@@ -17,20 +17,28 @@ public class Autos implements java.io.Serializable{
       private String nombre;
       private String apellido;
       private String Cedula;
+      private String sexo;
       private String Modelo;
       private String Marca;
       private String precio;
-      private String tipomodelo;
       private String tipomarca;
-      private Date fecha;
       private String telefono;
-
+      private String fecha;
+      private int nodueños;
 
     public Autos(String nombre, String apellido, String cedula) {
        this.nombre = nombre;
        this.apellido = apellido;
        this.Cedula = cedula;
     }
+
+    public Autos(String Modelo, String Marca, int nodueños, String tipomarca) {
+        this.Modelo = Modelo;
+        this.Marca = Marca;
+        this.tipomarca = tipomarca;
+        this.nodueños = nodueños;
+    }
+    
     
  public Autos(String Modelo, String Marca, String tipomarca, String precio) {
         this.Modelo = Modelo;
@@ -46,29 +54,47 @@ public class Autos implements java.io.Serializable{
         this.Marca = marca;
         this.Modelo = modelo;
   }
-  
-  public Autos(String nombre, String apellido, String Cedula, String marca, Date fecha) {
+
+    public Autos(String nombre, String apellido, String Cedula, String Marca, String tipomarca, String fecha) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.Cedula = Cedula;
-        this.Marca = marca;
+        this.Marca = Marca;
+        this.tipomarca = tipomarca;
         this.fecha = fecha;
-  }
+    }
 
+    public int getNodueños() {
+        return nodueños;
+    }
+
+    public void setNodueños(int nodueños) {
+        this.nodueños = nodueños;
+    }
+
+    
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+ 
     public String getTelefono() {
         return telefono;
     }
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
   
     public String getNombre() {
@@ -109,14 +135,6 @@ public class Autos implements java.io.Serializable{
 
     public void setMarca(String Marca) {
         this.Marca = Marca;
-    }
-
-    public String getTipomodelo() {
-        return tipomodelo;
-    }
-
-    public void setTipomodelo(String tipomodelo) {
-        this.tipomodelo = tipomodelo;
     }
 
     public String getTipomarca() {

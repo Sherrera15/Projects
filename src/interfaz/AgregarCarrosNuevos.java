@@ -53,7 +53,7 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
 
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cmbMarca = new javax.swing.JComboBox<String>();
+        cmbMarca = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         txtTipoMarca = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -61,6 +61,7 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         txtPrecio = new javax.swing.JTextField();
         cmbGuardar = new javax.swing.JButton();
+        cmbGuardar2 = new javax.swing.JButton();
         cmbLimpiar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -76,7 +77,7 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
         jLabel1.setText("Marca:");
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
-        cmbMarca.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chevrolet", "Ford", "Renault", "Nissan", "Mazda", "Audi", "Ferrari", "Lamborghini", " " }));
+        cmbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chevrolet", "Ford", "Renault", "Nissan", "Mazda", "Audi", "Ferrari", "Lamborghini", " " }));
         jPanel4.add(cmbMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 110, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -84,6 +85,11 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
         jLabel2.setText("Tipo de Marca:");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
+        txtTipoMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoMarcaActionPerformed(evt);
+            }
+        });
         txtTipoMarca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTipoMarcaKeyTyped(evt);
@@ -127,7 +133,16 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
                 cmbGuardarActionPerformed(evt);
             }
         });
-        jPanel4.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 130, 50));
+        jPanel4.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 130, 50));
+
+        cmbGuardar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbGuardar2.setText("Guardar [PILA]");
+        cmbGuardar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbGuardar2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(cmbGuardar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 150, 50));
 
         cmbLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmbLimpiar.setText("Limpiar");
@@ -136,7 +151,7 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
                 cmbLimpiarActionPerformed(evt);
             }
         });
-        jPanel4.add(cmbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 130, 50));
+        jPanel4.add(cmbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 130, 50));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 102));
@@ -231,6 +246,14 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
         txtTipoMarca.requestFocusInWindow();
     }//GEN-LAST:event_cmbLimpiarActionPerformed
 
+    private void cmbGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGuardar2ActionPerformed
+        
+    }//GEN-LAST:event_cmbGuardar2ActionPerformed
+
+    private void txtTipoMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoMarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoMarcaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -275,6 +298,7 @@ public class AgregarCarrosNuevos extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cmbGuardar;
+    private javax.swing.JButton cmbGuardar2;
     private javax.swing.JButton cmbLimpiar;
     private javax.swing.JComboBox<String> cmbMarca;
     private javax.swing.JLabel jLabel1;

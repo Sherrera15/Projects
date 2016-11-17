@@ -19,13 +19,13 @@ public class AutosAlquilados extends Autos
   private int horasalquiladas;
   private int horaspagar;
   
-  public AutosAlquilados (String nombre, String apellido, String Cedula, String marca, Date fecha, int horasalquiladas, int precioalquilada)
+  public AutosAlquilados (String nombre, String apellido, String Cedula, String marca,String tipomarca, String fecha, int horasalquiladas, int precioalquilada)
 {
-   super(nombre, apellido, Cedula, marca, fecha);
+   super(nombre, apellido, Cedula, marca, tipomarca, fecha);
    this.horasalquiladas = horasalquiladas;
    this.precioalquilada = precioalquilada;
 }
-
+  
     public int getPrecioalquilada() {
         return precioalquilada;
     }
